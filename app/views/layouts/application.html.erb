@@ -8,9 +8,23 @@
   <body>
     <div class="container">
       <%= render 'layouts/header' %>
-      <section class="round">
-        <%= yield %>
-      </section>
+      <%= render 'layouts/sides' %>
+      	<div id="centerarea">
+       <div id="authorarea" style="left: 0px; top: 0px">
+        <h3 class="center">Welcome To CS edu</h3>
+      </div>
+      <div class="headingarea">
+      	<h4 id="box1">"They know enough who know how to learn" </h4>
+      </div>
+        <div class="articlearea">
+			        <%= yield %>
+        </div>
+		<ul class="pagemenu">
+	      	<li><a href="B2.htm">Link to second page</a></li>
+		</ul>
+       <p class="center"><a href="test.htm" >Next Page </a></p>
+       <br />
+	  </div>
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
     </div>

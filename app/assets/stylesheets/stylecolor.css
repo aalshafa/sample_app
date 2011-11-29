@@ -1,0 +1,239 @@
+﻿/*  created using www.csswizard.net  */
+/* This stylesheet controls the webpage areas colours */
+
+body{
+    background-color: rgb(80,74,74);
+}
+
+#pageframe {
+    background-color: rgb(80,74,74);
+}
+	
+#titlearea {
+   	background-color: rgb(186,4,0);
+}
+
+#custom1 {
+	}
+
+#custom2 {
+	}
+
+#custom3 {
+	}
+
+/*   XXXXXXXXXXXX  This controls the TOP menu area and buttons  */
+
+#topmenuback {
+    	border-bottom: 1px solid rgb(180,180,180);
+    	border-top: 1px solid rgb(180,180,180); 
+		background-color: rgb(186,4,0);
+			}
+
+.menutopbox {
+}
+
+/*  XXXXXXXXXXXX This controls the SIDE menu area and buttons  */
+
+#leftarea {
+	background-color: rgb(50,40,40);
+	}
+	
+#rightarea {
+	background-color: rgb(50,40,40);
+	}
+
+
+.menubox {
+	}
+
+.submenubox {
+	}
+
+/*   XXXXXXXXXXXX  This controls the MIDDLE menu area and buttons  */
+
+#centerarea {
+	background-color: rgb(30,26,25);
+	}
+
+#authorarea {
+    	background-color: transparent;
+	}
+
+.headingarea {
+    	border-left: 1px solid rgb(0,0,0);
+    	border-bottom: 1px solid rgb(0,0,0);
+    	border-right: 1px solid rgb(0,0,0);
+    	border-top: 1px solid rgb(0,0,0);
+		background-color: transparent;
+	}
+
+.articlearea {
+    	border-left: 1px solid rgb(0,0,0);
+    	border-bottom: 1px solid rgb(0,0,0);
+    	border-right: 1px solid rgb(0,0,0);
+		background-color: transparent;
+	}
+	
+/* columns in text areas */
+	
+.clmn1 {
+    	border: 1px solid rgb(210,210,210);
+    	background: rgb(85,85,85); }
+.clmn2 { border: 1px solid rgb(210,210,210); background: rgb(85,85,85); }
+.clmn3 { border: 1px solid rgb(210,210,210); background: rgb(85,85,85); }
+.clmn4 { border: 1px solid rgb(210,210,210); background: rgb(85,85,85); }
+
+/*   XXXXXXXXXXXX  Pict and surround XXXXXXXXXXXX */
+
+.articlepicture, .articlepicture0, .articlepicture1 {
+    	border: 1px solid rgb(210,210,210);
+    	background-color: transparent;
+	}
+
+.frametopleft {
+	background: url(images/frame_tl.gif) no-repeat top left;
+	}
+
+.frametopright {
+	background: url(images/frame_tr.gif) no-repeat top right;
+	}
+
+.framebottomleft {
+	background: url(images/frame_bl.gif) no-repeat bottom left;
+	}
+
+.framebottomright {
+	background: url(images/frame_br.gif) no-repeat bottom right;
+	}
+
+/*   XXXXXXXXXXXX  Bottom bar area XXXXXXXXXXXX */
+
+#bottombar {
+    	background-color: rgb(186,4,0);
+	}
+
+/*   XXXXXXXXXXXX  This controls the tables created using our table code generator  */
+
+.subtable {
+    	border: 1px solid rgb(210,210,210);
+    	background: rgb(85,85,85);
+	}
+
+.toprow {
+    	background: rgb(102,102,102);
+	}
+
+.lastrow {
+    	background: rgb(102,102,102);
+	}
+
+
+/* Individual text colours*/
+
+
+p {	color: rgb(255,255,255);}
+
+h1 {	color: rgb(255,255,255);}
+
+h2 {	color: rgb(255,255,255);}
+
+h3 {	color: rgb(210,210,210);}
+
+h4 {	color: rgb(240,240,240);}
+
+h5 {	color: rgb(255,255,255);}
+
+h6 {	color: rgb(210,210,210);}
+
+
+/* indented paragraphs and list colours*/
+
+ul { color: rgb(0,0,153)}
+li { color: rgb(0,0,153)}
+
+/* Default text link colours*/
+
+a:link    {color: rgb(13,37,150)}
+a:visited {color: rgb(0,0,0)}
+a:hover   {color: rgb(200,0,0)}
+a:active  {color: rgb(13,37,125)}
+
+/* Top menu text link styles*/
+
+a.topmenutext:link, a.topmenutext:visited, a.topmenutext:active {
+    	background: transparent url(images/buttont.gif) 0px 0px no-repeat;
+	padding: 2px 0px 0px 0px;
+	color: rgb(192,192,192);
+	text-decoration: none;
+	}
+
+a.topmenutextlive:link, a.topmenutextlive:visited, a.topmenutextlive:active {
+    	background: transparent url(images/buttont.gif) 0px -30px no-repeat;
+	padding: 2px 0px 0px 0px;
+	color: rgb(255,255,255);
+	text-decoration: none;
+	}
+
+a.topmenutextlive:hover  {
+	color: rgb(255,255,187);
+	}
+
+a.topmenutext:hover  {
+    	background: transparent url(images/buttont.gif) 0px -60px no-repeat;
+	padding: 2px 0px 0px 0px;
+	color: rgb(252,54,60);
+	text-decoration: underline;}
+
+/* Side menu text link styles*/
+
+a.sidemenutext:link {
+    	background: rgb(186,4,0) url(images/button.jpg) 0px 0px no-repeat;
+	padding: 3px 0px 0px 16px;
+	color: rgb(255,255,255);
+	text-decoration: none;
+	}
+
+a.sidemenutext:visited, a.sidemenutext:active {
+    	background: rgb(186,4,0) url(images/button.jpg) 0px 0px no-repeat;
+	padding: 3px 0px 0px 16px;
+	color: rgb(220,220,220);
+	text-decoration: none;
+	}
+
+a.sidemenutextlive:link, a.sidemenutextlive:visited, a.sidemenutextlive:active {
+    	background: rgb(204,204,204) url(images/button.jpg) 0px -30px no-repeat;
+	padding: 3px 0px 0px 16px;
+	color: rgb(68,68,68);
+	text-decoration: none;
+	}
+
+a.sidemenutext:hover, a.sidemenutextlive:hover {
+    	background: rgb(220,220,220) url(images/button.jpg) 0px -60px no-repeat;
+	color: rgb(186,4,0);
+	text-decoration:  underline;
+	}
+
+/* Sidesub menu text link styles*/
+
+a.sidesubmenutext:link, a.sidesubmenutext:visited, a.sidesubmenutext:active {
+    background: rgb(186,4,0);
+	padding: 2px 0px 0px 6px;
+   	color: rgb(255,255,255);
+	text-decoration: none;
+	}
+
+a.sidesubmenutextlive:link, a.sidesubmenutextlive:visited, a.sidesubmenutextlive:active {
+    		color: rgb(86,86,86);
+	padding: 2px 0px 0px 6px;
+	background: rgb(204,204,204);
+    color: rgb(0,0,0);
+	text-decoration: none;
+	}
+
+a.sidesubmenutext:hover, a.sidesubmenutextlive:hover {
+    background: rgb(220,220,220);
+	padding: 2px 0px 0px 6px;
+   	color: rgb(186,4,0);
+	text-decoration: underline;
+	}

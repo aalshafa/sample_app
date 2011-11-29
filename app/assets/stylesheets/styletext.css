@@ -1,0 +1,128 @@
+﻿
+
+
+p {	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 0.75em;
+	text-align: justify;
+	line-height: 140%;
+	margin: 0px 0px 0px 0px;
+	padding: 5px 5px 0px 5px;
+	}
+
+h1 {
+	font-family: "CenturyGothic",Verdana,Arial,Helvetica,sans-serif;
+	font-size: 1.4em;
+	font-weight: bold;
+	text-align: center;
+	margin: 0px 0px 0px 0px;
+	padding: 10px 0px 0px 0px;
+	}
+
+h2 {
+	font-family: "CenturyGothic",Verdana,Arial,Helvetica,sans-serif;
+	font-size: 1.1em;
+	font-weight: bold;
+	text-align: center;
+	margin: 0px 0px 0px 0px;
+	padding: 5px 0px 0px 0px;
+	}
+
+h3 {
+	font-family: "CenturyGothic",Verdana,Arial,Helvetica,sans-serif;
+	font-size: 0.9em;
+	text-align: left;
+	margin: 0px 0px 0px 0px;
+	padding: 10px 0px 5px 0px;
+	}
+
+h4 {	
+	font-family: "CenturyGothic",Verdana,Arial,Helvetica,sans-serif;
+	font-size: 1.5em;
+	font-weight: normal;
+	text-align: left;
+	margin: 5px 0px 0px 0px;
+	padding: 0px 0px 0px 5px;
+	}
+
+h5 {	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 0.7em;
+	text-align: center;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 4px;
+	}
+
+h6 {	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 0.65em;
+	text-align: center;
+	margin: 0px auto;
+	padding: 4px 0px 4px 4px;
+	}
+
+a.topmenutext, a.topmenutextlive {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 0.7em;
+	font-weight: bold;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	display: block;
+	}
+	
+a.sidemenutext, a.sidemenutextlive {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 0.7em;
+	font-weight: bold;
+	text-align:center;
+	width: 110%;
+	height: 24px;
+	display: block;
+	}
+
+a.sidesubmenutext, a.sidesubmenutextlive {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 0.65em;
+	font-weight: normal;
+	width: 96%;
+	height: 35px;
+	display: block;
+	}
+
+.center {text-align: center}
+.right {text-align: right}
+.left {text-align: left}
+
+.style1 {font-size: 125%; font-weight: 800; }
+.style2 {font-size: 125%; font-style: italic; font-weight: 800; }
+.style3 {font-size: 125%; font-style: italic; font-variant: small-caps; font-weight: 800; }
+.style4 {font-size: 110%; font-variant: small-caps; font-weight: 800; }
+
+/* for graphic text font generator*/
+
+.fontimage  {
+	float: left;
+	width: 100%;
+	clear: both;
+	}
+
+.fontimage img {
+	border: 0px;
+	margin: 0px 0px 0px 0px;
+	float: left;}
+
+/* indented paragraphs and list styles*/
+
+ul {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 1em; }
+li {
+	border:thick;
+	margin: 4% 8% 0 0;
+}
+
+/* Default text link styles*/
+
+a:link    {text-decoration:underline}
+a:visited {text-decoration:underline}
+a:hover   {text-decoration:underline}
+a:active  {text-decoration:underline}
+
+a.navtext:link, a.navtext:visited, a.navtext:active {text-align: right; text-decoration: none;}
+a.navtext:hover {text-align: left; text-decoration: underline;}
