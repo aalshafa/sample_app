@@ -2,7 +2,7 @@
 /* This stylesheet controls the webpage areas colours */
 
 body{
-    background-color: rgb(80,74,74);
+    background-color: #3f3f3f ;
 }
 
 #pageframe {
@@ -36,11 +36,11 @@ body{
 /*  XXXXXXXXXXXX This controls the SIDE menu area and buttons  */
 
 #leftarea {
-	background-color: rgb(50,40,40);
+	background-color: #1d1d1d;
 	}
 	
 #rightarea {
-	background-color: rgb(50,40,40);
+	background-color: #1d1d1d;
 	}
 
 
@@ -53,7 +53,7 @@ body{
 /*   XXXXXXXXXXXX  This controls the MIDDLE menu area and buttons  */
 
 #centerarea {
-	background-color: rgb(30,26,25);
+	background-color: #1d1d1d;
 	}
 
 #authorarea {
@@ -91,21 +91,7 @@ body{
     	background-color: transparent;
 	}
 
-.frametopleft {
-	background: url(images/frame_tl.gif) no-repeat top left;
-	}
 
-.frametopright {
-	background: url(images/frame_tr.gif) no-repeat top right;
-	}
-
-.framebottomleft {
-	background: url(images/frame_bl.gif) no-repeat bottom left;
-	}
-
-.framebottomright {
-	background: url(images/frame_br.gif) no-repeat bottom right;
-	}
 
 /*   XXXXXXXXXXXX  Bottom bar area XXXXXXXXXXXX */
 
@@ -155,7 +141,7 @@ li { color: rgb(0,0,153)}
 /* Default text link colours*/
 
 a:link    {color: rgb(13,37,150)}
-a:visited {color: rgb(0,0,0)}
+a:visited {color:#C6D880}
 a:hover   {color: rgb(200,0,0)}
 a:active  {color: rgb(13,37,125)}
 
