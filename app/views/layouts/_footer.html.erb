@@ -1,13 +1,10 @@
 <footer>
-	<div id="pageframe"> 
-  	<div id="bottombar">
-       <h5>
-       <a title="bottom menu acces to Home" href=<%= root_path%>>Home</a> | 
-       <a href=<%= about_path %>>About</a> |
-       <a href=<%= contact_path%>>Contact</a> |
-       <a title="Return to the top of this page. Home key" href= "#pageframe" target="_top">Top</a>
-       </h5>
-	</div><!-- bottombar close -->
-  	</div>
+  <nav class="round">
+    <ul>
+      <li><%= link_to "About", about_path %></li>
+      <li><%= link_to "Contact", contact_path %></li>
+      <li><a href="http://news.railstutorial.org/">News</a></li>
+      <li><a href="http://www.railstutorial.org/">Rails Tutorial</a></li>
+    </ul>
+  </nav>
 </footer>
-

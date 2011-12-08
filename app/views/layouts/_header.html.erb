@@ -1,27 +1,11 @@
 <header>
-	<div id="pageframe"> 
-  	<div id="titlearea">	   
-	   <h1>Welcome to CS edu</h1>
-       <h2>The source of knowlegde</h2>
-	</div>
-		<div id="topmenuback">
-	
-		<div class="menutopbox"> 
-			<a class="topmenutextlive" href=<%= about_path%>>About</a>
-		</div>
-		<div class="menutopbox"> 
-			<a class="topmenutextlive" href=<%= root_path%>>Home</a> 
-		</div>
-		<div class="menutopbox"> 
-			<a class="topmenutextlive" href=<%= help_path%>>Help</a>
-		</div>
-		<div class="menutopbox"> 
-			<a class="topmenutextlive" href=<%= signup_path%>>Sign-up</a>
-		</div>
-		<div class="menutopbox"> 
-			<a class="topmenutextlive" href="#">Sign-in</a>
-		</div>
-
-	</div>
-	</div>
+  <% logo = image_tag("logo.png", :alt => "Sample App", :class => "round") %>
+  <%= link_to logo, root_path %>
+  <nav class="round">
+    <ul>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Help", help_path %></li>
+      <li><%= link_to "Sign in", '#' %></li>
+    </ul>
+  </nav>
 </header>
