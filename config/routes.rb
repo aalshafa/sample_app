@@ -1,4 +1,12 @@
 SampleApp::Application.routes.draw do
+
+  get "comments/create"
+
+  get "comments/destroy"
+
+  resources :posts do
+    resources :comments
+  end
   resources :users do
     member do
       get :following, :followers
@@ -15,7 +23,7 @@ SampleApp::Application.routes.draw do
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
-  
+  match 'classes/cs4413',  :to => 'static_pages#cs4413'
   root :to => "pages#home"
 
   # The priority is based upon order of creation:

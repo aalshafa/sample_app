@@ -1,0 +1,37 @@
+<div class="block" id="posts">
+          <div class="secondary-navigation">
+            <ul class="wat-cf">
+              <li class="first"><a href="posts"><%= @post.title %></a></li>
+            </ul>
+          </div>
+          <div class="content">
+            <h2 class="title">Comments</h2>
+            <div class="inner">
+			<% @post.comments.each do |comment| %>
+				<p><%= comment.body %></p>
+				<p><%= time_ago_in_words comment.created_at %>  ago </p>
+				<p><%= link_to "Delete comment" , [@post , comment], :method => :delete, :confirm => "Are you sure?" %></p>
+			<% end %>
+
+<%= form_for [@post, @post.comments.build], :html => { :class => "form"} do |f| %>
+		<div class="group">
+         <label class="label">Comment</label>
+			<%= f.text_area :body, :size => '40x10' , :class => "text_area"  %>
+	 </div>
+	 <div class="group navform wat-cf">
+	<%= f.submit "Post comment" , {:class => "button"} %>
+       </div>
+<% end %>
+
+
+<p>
+<%= link_to 'Edit', edit_post_path(@post) %> 
+|
+<%= link_to 'Back', posts_path %>
+|
+<%= link_to 'Delete', @post, :method => :delete, :confirm => "Are you sure?" %>
+</p>
+
+
+
+

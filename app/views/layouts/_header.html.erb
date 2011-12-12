@@ -15,6 +15,8 @@
       		<% if signed_in? %>
         		<li class=<%= (params[:controller] == "users" &&  params[:action] == "show" ? "active" : nil)%>>
 					<%= link_to "Profile", current_user %></li>
+				<li class=<%= (params[:controller] == "posts" &&  params[:action] == "show" ? "active" : nil)%>>
+					<%= link_to "Posts", posts_path %></li>
         		<li class=<%= (params[:controller] == "users" &&  params[:action] == "index" ? "active" : nil)%>>
 					<%= link_to "Users", users_path %></li>
         		<li class=<%= (params[:controller] == "users" &&  params[:action] == "edit" ? "active" : nil)%>>

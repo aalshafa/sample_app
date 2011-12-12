@@ -1,0 +1,29 @@
+<table class="profile" summary="All Users">
+  <tr>
+		<h2>Posts</h2>
+        <table class="table" summary="All Users">
+        <tr>
+         	<th> Link to first Post </th>
+         	<th> Time </th>
+         	<th class="last"> Content</th>
+        </tr>
+		<% @posts.each do |post| %>
+         <tr class=<%= cycle("odd", "even")  %>>
+          		<td class="first"> 
+          			 <%= link_to post.title , post %> 
+          		</td>
+          		<td>
+          	  		<%= time_ago_in_words post.created_at %> ago
+          		</td>
+  				<td>
+  			 		<%= truncate post.body %>         
+            	</td>
+            </tr>
+  			<% end %>
+        </table>
+        </tr>
+        </table>
+<p>
+<%= link_to 'New Post', new_post_path %>
+</p>
+

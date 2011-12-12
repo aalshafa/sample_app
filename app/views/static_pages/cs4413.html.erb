@@ -1,0 +1,163 @@
+<h1>XAMPPLite</h1>
+
+<div class="block" id="XAMPPLite">
+	<div class="secondary-navigation">
+    	<ul class="wat-cf">
+        	<li class="active first"><a href="#XAMPPLite">XAMPPLite</a></li>
+        </ul>
+    </div>
+    <div class="content">
+            <h2 class="title">How to install XAMPPLite</h2>
+            <div class="inner">
+
+<p>We will be using XAMPP as our AMP (Apache-mysql-php) setup. The extra P 
+stands for perl. For a comparison of XAMPP with other WAMP-like packages see:
+<a href="http://en.wikipedia.org/wiki/Comparison_of_WAMPs">
+http://en.wikipedia.org/wiki/Comparison_of_WAMPs</a>.
+</p> 
+
+<strong>Step 1: Install XAMPPLite</strong>
+<ul>
+<li> Download XAMPPLite (zip format): 
+<a href="http://www.apachefriends.org/en/xampp-windows.html">http://www.apachefriends.org/en/xampp-windows.html</a></li>
+<li> Unzip it at the top level of your flash drive.</li>
+<li> Run <code>setup_xampp.bat</code> to set up the paths.</li>
+<li> Run <code>xampp-control.exe</code> to bring up the control panel.</li>
+<li> Start and stop apache and mysql to make sure that everything is working.</li>
+</ul>
+
+<strong>Step 2: Create a mysql database</strong>
+<ul>
+<li> From the XAMPP control panel start mysql and apache.</li>
+<li> Click the mysql <code>Admin</code> button to bring up a web page for administering mysql. (If this
+doesn't work, you can get at the database administration by pressing the admin button for Apache and 
+selecting <code>phpMyAdmin</code> under <code>Tools</code>.)</li>
+<li> Download the <a href="downloads/commentdb.sql"><code>commentdb.sql</code></a> file somewhere on your machine.</li>
+<li> Click on the <code>Databases</code> tab to see what you have.</li>
+<li> Click on the <code>Import</code> tab and follow the directions to import <code>commentdb.sql</code>.
+This file contains a script to create a <code>commentdb</code> database.</li>
+<li> Look at the table created for <code>commentdb</code> using the tools in the <code>Databases</code> tab.</li>
+</ul>
+
+<strong>Step 3: Shutting down</strong>
+When finished --- be sure to STOP your server before exiting the XAMPP control panel. 
+
+<br />
+
+<a href="http://www.cs.utsa.edu/~cs4413/lectures/index.html">here's the orginal link (Author: Dr. Kay A. Robbins)</a>
+
+			</div>
+	</div>
+</div>
+
+
+
+
+
+<h1>Heroku deployment and trouble shooting</h1>
+
+<div class="block" id="heroku">
+	<div class="secondary-navigation">
+    	<ul class="wat-cf">
+        	<li class="active first"><a href="#heroku">Heroku</a></li>
+        </ul>
+    </div>
+    <div class="content">
+            <h2 class="title">How to deploy on Heroku</h2>
+            <div class="inner">
+
+<h3>Basic deployment:</h3>
+<ul>
+<li> Install the heroku gem:  <code>gem install heroku</code></li>
+<li> Tell Heroku your public key:  <code>heroku keys:add</code><br>
+You will be prompted for your Heroku account information.</li>
+<li> Create a Heroku project:  <code>heroku create --stack cedar</code><br>
+The Cedar stack is the preferred software installation. They have fixed
+several issues with requiring precompiled assets and now it seems to work.</li>
+<li> Try pushing the project up to Heroku: <code>git push heroku master</code><br></li>
+<li> You can see whether it works by typing: <code>heroku open</code></li>
+<li> If you have a database in your project:
+<ul>
+<li> Heroku runs postgreSQL, while we are running sqlite locally.  You have to
+make sure that your production gems use postgreSQL while testing and
+development use sqlite. Look at the Gemfile for <code>http://github.com/cs4413/sample_app_users_120611</code> to
+see how to use sqlite3 for development and postgreSQL for production.</li>
+<li> You also have to migrate the database. If you are populating the database you will also have to run the seeds.
+<pre>git push heroku
+heroku run rake db:migrate
+heroku run rake db:seed
+</pre>
+</li>
+</ul>
+</li>
+<li><strong>Pushing a branch</strong>: If you want to push xxx rather than master to heroku do:
+<pre>git push heroku xxx:master
+</pre>
+</li>
+</ul>
+
+<h3>Trouble-shooting</h3>
+<ul>
+<li> If the pages don't appear to be deploying correctly, you have to look
+at what happened in the logs: <code>heroku logs</code></li>
+<li> <strong>Can't find sqlite3</strong> message indicates that you don't have a gemfile that
+specifies postgreSQL for production (see above).</li>
+<li> <strong>It shows locally put not remotely</strong>: The most common problem here is that you
+have an error in your css or javascript.  The local browser ignores these errors but the
+heroku compiles them as assets and insists they be correct. These type of errors show up
+in the heroku logs. You can look at the pages in firebug and see if you can find any css errors, or
+remove the stylesheets one at a time to narrow down the errors.</li>
+<li><strong>Only see the default page on heroku but not locally</strong>. To get rid of the
+the default rails page, you have to remove the <code>public/index.html</code>. If you remove it using 
+<code>rm</code> after you committed your project for the first time, the <code>index.html</code> 
+file will still be in your local git repository. You will need to to a <code>git rm public/index.html</code>
+to get rid of it. Then fully commit and try again.</li>
+<li><strong>Random errors on heroku but not locally</strong>: One of the most common problems is
+to forget to fully commit your project locally and push to heroku before running. Heroku works by pushing the 
+local git repository to a heroku git repository and then building from there. If you forget to add or commit something
+to your local git repository, it may work fine locally since the local server works from the file system 
+not the repository. It is a good idea to fully push to github before pushing to heroku. Sometimes errors in
+your repository are more visible on the github push.</li>
+<li><strong>More random errors</strong>: Another problem is making a change to your data model and forgetting 
+to migrate the database on heroku </li>
+<li> <strong>Data table not available</strong>: This is a symptom of not migrating your database on heroku. </li>
+<li> <strong>Not authorized or this key already in use</strong>: Public keys are associated with one and only one
+Heroku account. If you get your keys mixed up you will not be able to deploy.  Do:
+<pre>heroku keys:clear
+heroku auth:logout
+</pre>
+The first command clears all of your keys for the current heroku user. (It should ask you for a heroku
+account.) The second command logs out of heroku locally.
+<p>This problem usually occurs when you have multiple accounts. You may have to do:</p>
+<pre>heroku auth:login</pre>
+and then clear the keys for each and every one of your heroku accounts depending on how confused things are.
+Finally, settle on the account you are going to stick with and then do:
+<pre>heroku keys:add ~/.ssh/id_rsa.pub
+</pre></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3>Populating databases locally and on heroku</h3>
+<ul>
+<li><strong>Locally</strong>:
+<ul>
+<li> Create a rake task such as <a href="downloads/sample_data.zip"><code>sample_data.rake</code></a> and put the
+file in <code>lib/tasks</code> (be sure to unzip).</li>
+<li> Run <code>rake db:populate</code> to populate your local sqlite3 database.</li>
+</ul>
+</li>
+<li><strong>Heroku</strong>:
+<ul>
+<li> Create a <a href="downloads/seeds.zip"><code>seeds.rb</code></a> file and put it in <code>db/</code>  (be sure to unzip).</li>
+<li> Run <code> heroku run rake db:seed</code> after migrating the database.</li>.
+</ul>
+</li>
+</ul>
+
+			</div>
+	</div>
+</div>
+
+
+

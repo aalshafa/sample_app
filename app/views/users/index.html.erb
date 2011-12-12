@@ -23,8 +23,7 @@
   				<% if current_user.admin? %>
   				<td>
   			 		<%= link_to "delete", user, :method => :delete, :confirm => "You sure?",
-                              :title => "Delete #{user.name}" %>
-                              
+                              :title => "Delete #{user.name}" %>         
             	</td>
             	<% end %>
             </tr>
