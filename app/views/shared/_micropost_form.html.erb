@@ -1,9 +1,26 @@
-<%= form_for(@micropost) do |f| %>
-  <%= render 'shared/error_messages', :object => f.object %>
-  <div class="field">
-    <%= f.text_area :content %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Submit" %>
-  </div>
-<% end %>
+	<div class="block" id="new-post">
+    	<div class="secondary-navigation">
+        	<ul class="wat-cf">
+              	<li class="active"><a href="#new-post">What's up?</a></li>
+              	<li class="last"><a></a></li>
+            </ul>
+        </div>
+        <div class="content">
+        	<h2 class="title">What's Up?</h2>
+        		<div class="inner">
+					<%= form_for(@micropost , {:class => "form"}) do |f| %>
+  					<%= render 'shared/error_messages', :object => f.object %>
+  						<div class="columns wat-cf">
+  							<div class="column left">
+  								<div class="group">
+    								<%= f.text_area :content , {:class => "label"} %>
+  								</div>
+  							</div>
+  						</div>
+ 						<div class="group navform wat-cf">
+         			       	<%= f.submit "Submit" , {:class => "button"} %>
+  						</div>
+					<% end %>
+            	</div>
+        </div>
+	</div>

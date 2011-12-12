@@ -1,19 +1,26 @@
-<header>
-  <%= link_to logo, root_path %>
-  <nav class="round">
-    <ul>
-      <li><%= link_to "Home", root_path %></li>
-      <% if signed_in? %>
-        <li><%= link_to "Profile", current_user %></li>
-        <li><%= link_to "Users", users_path %></li>
-        <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-      <% end %>
-      <li><%= link_to "Help", help_path %></li>
-      <% if signed_in? %>
-        <li><%= link_to "Sign out", signout_path %></li>
-      <% else %>
-        <li><%= link_to "Sign in", signin_path %></li>
-      <% end %>
-    </ul>
-  </nav>
-</header>
+<div id="header">
+	<h1><a href="/"><%= title %></a></h1>
+    <div id="user-navigation">
+    	<ul class="wat-cf">
+    		<% if signed_in? %>
+        		<li><%= link_to "Sign out", signout_path, :class => "logout" %></li>
+      		<% else %>
+        		<li><%= link_to "Sign in", signin_path %></li>
+      		<% end %>
+    	</ul>
+	</div>
+    <div id="main-navigation">
+    	<ul class="wat-cf">
+    		<li class=<%= (params[:controller] == "pages" &&  params[:action] == "home" ? "active" : nil )%>><%= link_to "Home", root_path %></li>
+      		<% if signed_in? %>
+        		<li class=<%= (params[:controller] == "users" &&  params[:action] == "show" ? "active" : nil)%>>
+					<%= link_to "Profile", current_user %></li>
+        		<li class=<%= (params[:controller] == "users" &&  params[:action] == "index" ? "active" : nil)%>>
+					<%= link_to "Users", users_path %></li>
+        		<li class=<%= (params[:controller] == "users" &&  params[:action] == "edit" ? "active" : nil)%>>
+					<%= link_to "Settings", edit_user_path(current_user)%></li>
+      		<% end %>
+      		<li class=<%= (params[:controller] == "pages" &&  params[:action] == "help" ? "active" : nil)%>><%= link_to "Help", help_path %></li>
+    	</ul>
+    </div>
+</div>  

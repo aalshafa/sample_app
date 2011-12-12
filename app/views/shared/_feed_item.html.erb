@@ -1,8 +1,8 @@
-<tr>
-  <td class="gravatar">
+<tr class=<%= cycle("odd", "even")  %>>
+    <td class="first"> 
     <%= link_to gravatar_for(feed_item.user), feed_item.user %>
   </td>
-  <td class="micropost">
+  <td >
     <span class="user">
       <%= link_to feed_item.user.name, feed_item.user %>
     </span>

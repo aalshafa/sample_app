@@ -1,9 +1,36 @@
-<h1>All users</h1>
+<table class="profile" summary="All Users">
+  <tr>
+		<h2>All users</h2>
+		<%= will_paginate %>
+        <table class="table" summary="All Users">
+        <tr>
+         <th class="first"> Profile Picture </th>
+         <% if current_user.admin? %>
+          	<th> User Name</th>
+         	<th class="last"> Delete </th>
+         <% else %>
+         	<th class="last"> User Name</th>
+         <% end %>
+        </tr>
+        <% @users.each do |user| %>
+          <tr class=<%= cycle("odd", "even")  %>>
+          		<td class="first"> 
+          			<%= gravatar_for user, :size => 30 %> 
+          		</td>
+          		<td>
+          	  		<%= link_to user.name, user %>
+          		</td>
+  				<% if current_user.admin? %>
+  				<td>
+  			 		<%= link_to "delete", user, :method => :delete, :confirm => "You sure?",
+                              :title => "Delete #{user.name}" %>
+                              
+            	</td>
+            	<% end %>
+            </tr>
+  			<% end %>
+        </table>
+        <%= will_paginate %>
+  </tr>
+</table>
 
-<%= will_paginate %>
-
-<ul class="users">
-  <%= render @users %>
-</ul>
-
-<%= will_paginate %>

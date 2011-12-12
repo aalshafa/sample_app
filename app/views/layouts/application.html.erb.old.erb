@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <%= csrf_meta_tag %>
+    <%= render 'layouts/stylesheets' %>
+    <%= javascript_include_tag "application" %>
+  </head>
+  <body>
+    <div class="container">
+      <%= render 'layouts/header' %>
+      <div class="wat-cf" id="wrapper">
+      <div class="block">
+      	<div class="content">
+      	<div class="flash">
+        <% flash.each do |type, message| %>
+          <div class="<%= "message error" %>">
+          		<%= value %>
+          </div>
+        <% end %>
+        </div>
+        </div>
+        </div>
+        </div>
+        <%= yield %>
+      <%= render 'layouts/footer' %>
+      <%= debug(params) if Rails.env.development? %>
+    </div>
+  </body>
+</html>

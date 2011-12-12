@@ -1,17 +1,29 @@
-<h1>Sign in</h1>
-
-<%= form_for(:session, :url => sessions_path) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Sign in" %>
-  </div>
+<div id="box"> 
+      <div class="block" id="block-signup">
+        <h2>Sign up</h2>
+        <div class="content">
+<%= form_for(:session, :url => sessions_path , :html => { :class => "form" } ) do |f| %>
+<div class="group wat-cf">
+	<div class="left">
+		<%= f.label :email , {:class => "label"} %>
+	</div>
+	<div class="right">
+		<%= f.text_field :email , {:class =>"text_field"} %>
+		<span class="description">Ex: test@example.com</span>
+	</div>
+</div>
+<div class="group wat-cf">
+	<div class="left">
+		<%= f.label :password , {:class => "label"} %>
+	</div>
+	<div class="right">
+		<%= f.password_field :password , {:class =>"text_field"} %>
+		<span class="description">Ex: abc123</span>
+	</div>
+</div>
+<div class="group navform wat-cf">
+    <%= f.submit "Sign in"  , {:class =>"button"} %>
+</div>
 <% end %>
 
 <p>New user? <%= link_to "Sign up now!", signup_path %></p>

@@ -1,3 +1,12 @@
+<% content_for :sidebar do %>	
+	<div class="block" >
+		<h3>User Information</h3>
+      <strong>Name</strong> <%= @user.name %><br />
+      <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
+      <strong>Microposts</strong> <%= @user.microposts.count %>
+      <%= render 'shared/stats' %>
+	</div>
+<% end %>
 <table class="profile" summary="Profile information">
   <tr>
     <td class="main">
@@ -7,17 +16,18 @@
       </h1>
       <%= render 'follow_form' if signed_in? %>
       <% if @user.microposts.any? %>
-        <table class="microposts" summary="User microposts">
+        <table class="table">
+        <tr>
+         <th class="first"> Post </th>
+         <th class="last"> Delete Post </th>
+         </tr>
           <%= render @microposts %>
         </table>
         <%= will_paginate @microposts %>
       <% end %>
     </td>
-    <td class="sidebar round">
-      <strong>Name</strong> <%= @user.name %><br />
-      <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
-      <strong>Microposts</strong> <%= @user.microposts.count %>
-      <%= render 'shared/stats' %>
-    </td>
-  </tr>
+      </tr>
 </table>
+
+
+
